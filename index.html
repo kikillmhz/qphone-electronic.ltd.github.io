@@ -130,6 +130,24 @@
         .catalog-wrap {
             text-align: center;
         }
+        /* 产品目录双下载按钮 */
+        .catalog-buttons {
+            text-align: center;
+            margin: 10px 0 30px;
+        }
+        .catalog-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #000;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: 0.3s;
+            margin: 0 8px 10px;
+        }
+        .catalog-btn:hover {
+            background: #333;
+        }
     </style>
 </head>
 <body>
@@ -242,6 +260,14 @@
         <section id="services" class="section-services">
             <div class="services-container">
                 <h2 class="section-title" data-lang-en="Our Products" data-lang-cn="主营产品">主营产品</h2>
+                <div class="catalog-buttons">
+                    <a href="catalog-pfc.pdf" download class="catalog-btn">
+                        <span data-lang-en="PFC Inductor Catalog" data-lang-cn="PFC电感目录">PFC电感目录</span>
+                    </a>
+                    <a href="catalog-common-mode.pdf" download class="catalog-btn">
+                        <span data-lang-en="Common Mode Catalog" data-lang-cn="共模电感目录">共模电感目录</span>
+                    </a>
+                </div>
                 <!-- PDF 产品目录下载 -->
                 <div class="catalog-wrap">
                     <button class="download-catalog-btn" id="downloadBtn">
