@@ -110,6 +110,26 @@
             from {opacity: 0;}
             to {opacity: 1;}
         }
+        /* PDF 下载按钮 */
+        .download-catalog-btn {
+            display: inline-block;
+            margin: 10px auto 30px;
+            padding: 12px 28px;
+            background: #000;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: 0.3s;
+            border:none;
+            font-size:16px;
+            cursor:pointer;
+        }
+        .download-catalog-btn:hover {
+            background: #333;
+        }
+        .catalog-wrap {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -222,11 +242,11 @@
         <section id="services" class="section-services">
             <div class="services-container">
                 <h2 class="section-title" data-lang-en="Our Products" data-lang-cn="主营产品">主营产品</h2>
-                <!-- PDF产品目录下载按钮 -->
+                <!-- PDF 产品目录下载 -->
                 <div class="catalog-wrap">
-                    <a href="catalog.pdf" download class="download-catalog-btn">
-                        <span data-lang-en="Download Detailed Product Catalog PDF" data-lang-cn="下载产品详细目录大全 PDF">下载产品目录 PDF</span>
-                    </a>
+                    <button class="download-catalog-btn" id="downloadBtn">
+                        <span data-lang-en="Download Product Catalog" data-lang-cn="下载产品目录">下载产品目录</span>
+                    </button>
                 </div>
                 
                 <div class="product-tabs">
@@ -378,6 +398,30 @@
     <script>
         let currentLang = 'en';
         const langBtn = document.getElementById('langBtn');
+        // 产品目录下载选择
+        const downloadBtn = document.getElementById('downloadBtn');
+        const langText = {
+            en: {
+                tip: "Please select catalog to download\n1. PFC Inductor Catalog\n2. Common Mode Inductor Catalog",
+                pfc: "PFC Inductor Catalog",
+                cm: "Common Mode Inductor Catalog"
+            },
+            cn: {
+                tip: "请选择要下载的产品目录\n1. PFC电感产品目录\n2. 共模电感产品目录",
+                pfc: "PFC电感产品目录",
+                cm: "共模电感产品目录"
+            }
+        };
+        
+        downloadBtn.addEventListener('click', function(){
+            let t = langText[currentLang];
+            let opt = prompt(t.tip, "");
+            if(opt === "1"){
+                window.open("catalog-pfc.pdf", "_blank");
+            }else if(opt === "2"){
+                window.open("catalog-common-mode.pdf", "_blank");
+            }
+        });
 
         function initLang(){
             document.querySelectorAll('[data-lang-en]').forEach(el => {
