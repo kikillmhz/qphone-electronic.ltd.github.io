@@ -89,39 +89,35 @@
     </header>
 
     <main>
-        <section id="home" class="section-hero">
-            <div class="hero-container">
+
+        <!-- 🔥 首页已替换成 公司全景视频背景 -->
+        <section id="home" class="section-hero" style="position:relative; overflow:hidden; height:100vh;">
+            <video autoplay muted loop playsinline 
+                style="
+                position:absolute;
+                top:0; left:0;
+                width:100%; height:100%;
+                object-fit:cover;
+                z-index:0;
+                filter:brightness(0.5);">
+                <source src="hero-video.mp4" type="video/mp4">
+            </video>
+
+            <div class="hero-container" style="position:relative; z-index:1;">
                 <div class="hero-left">
                     <div class="hero-line"></div>
                     <h2 data-lang-en="Precision Inductors For Electronics Industry" data-lang-cn="电子行业精密电感制造商">电子行业精密电感制造商</h2>
                     <p data-lang-en="Kunshan Qunfeng Precision Electronic Co., Ltd. (Q-PHONE) specializes in R&D, production and sales of high-quality inductors, magnetic beads and electronic components." data-lang-cn="昆山群丰精密电子有限公司（Q-PHONE）专业研发、生产、销售高品质电感、磁珠及各类电子元器件。">昆山群丰精密电子有限公司（Q-PHONE）专业研发、生产、销售高品质电感、磁珠及各类电子元器件。</p>
                     <a href="#contact" class="cta-button" data-lang-en="Contact Us" data-lang-cn="联系我们">联系我们</a>
                 </div>
-                <div class="slider-container">
-                    <div class="slide active">
-                        <img src="images/company.jpg" alt="Company photo">
-                    </div>
-                    <div class="slide">
-                        <img src="images/production.jpg" alt="Sample Product">
-                    </div>
-                    <div class="slide">
-                        <img src="images/warehouse.jpg" alt="Electronic Components">
-                    </div>
-                    <div class="slider-dots">
-                        <div class="dot active" onclick="currentSlide(0)"></div>
-                        <div class="dot active" onclick="currentSlide(1)"></div>
-                        <div class="dot active" onclick="currentSlide(2)"></div>
-                    </div>
-                </div>
             </div>
         </section>
 
-        <!-- 全新产品板块（对标同行官网） -->
+        <!-- 产品板块 -->
         <section id="services" class="section-services">
             <div class="services-container">
                 <h2 class="section-title" data-lang-en="Our Products" data-lang-cn="主营产品">主营产品</h2>
                 
-                <!-- 产品标签 -->
                 <div class="product-tabs">
                     <button class="tab-btn active" onclick="openTab(event, 'cm')">
                         <span data-lang-en="Common Mode Chokes" data-lang-cn="共模电感">Common Mode Chokes</span>
@@ -134,7 +130,6 @@
                     </button>
                 </div>
 
-                <!-- 1. 共模电感 -->
                 <div id="cm" class="tab-content active">
                     <div class="product-detail">
                         <div class="product-slider">
@@ -144,23 +139,23 @@
                             <h3 data-lang-en="Common Mode Chokes" data-lang-cn="共模电感">共模电感</h3>
                             <p data-lang-en="Widely used in air conditioners, inverter appliances, switching power supplies, UPS, new energy equipment to suppress EMI interference." data-lang-cn="广泛应用于空调、变频家电、开关电源、UPS、新能源设备，抑制电磁干扰。">广泛应用于空调、变频家电、开关电源、UPS、新能源设备，抑制电磁干扰。</p>
                             <p><strong data-lang-en="Features" data-lang-cn="产品特点">产品特点：</strong></p>
-                            <ul data-lang-en="Vertical / Horizontal / Three-phase / Nanocrystalline / High Current optional; High anti-interference; RoHS compliant; Customizable" data-lang-cn="立式/卧式/三相/纳米晶/大电流可选；高抗干扰；环保RoHS；支持定制">
-                                <li>立式/卧式/三相/纳米晶/大电流可选</li>
-                                <li>高共模干扰抑制能力</li>
-                                <li>低漏感、长寿命</li>
-                                <li>符合RoHS，支持定制</li>
+                            <ul>
+                                <li data-lang-en="Vertical / Horizontal / Three-phase / Nanocrystalline / High Current optional">立式/卧式/三相/纳米晶/大电流可选</li>
+                                <li data-lang-en="High anti-interference performance">高共模干扰抑制能力</li>
+                                <li data-lang-en="Low leakage, long service life">低漏感、长寿命</li>
+                                <li data-lang-en="RoHS compliant, customizable">符合RoHS，支持定制</li>
                             </ul>
                             <table class="param-table">
                                 <tr>
-                                    <td data-lang-en="Rated Current" data-lang-cn="额定电流">额定电流</td>
+                                    <td data-lang-en="Rated Current">额定电流</td>
                                     <td>0 ~ 100A</td>
                                 </tr>
                                 <tr>
-                                    <td data-lang-en="Inductance Range" data-lang-cn="电感范围">电感范围</td>
+                                    <td data-lang-en="Inductance Range">电感范围</td>
                                     <td>0 ~ 100mH (Customizable)</td>
                                 </tr>
                                 <tr>
-                                    <td data-lang-en="Working Temp" data-lang-cn="工作温度">工作温度</td>
+                                    <td data-lang-en="Working Temp">工作温度</td>
                                     <td>-40℃ ~ +125℃</td>
                                 </tr>
                             </table>
@@ -168,7 +163,6 @@
                     </div>
                 </div>
 
-                <!-- 2. PFC电感 -->
                 <div id="pfc" class="tab-content">
                     <div class="product-detail">
                         <div class="product-slider">
@@ -177,24 +171,24 @@
                         <div class="product-info">
                             <h3 data-lang-en="PFC Inductors" data-lang-cn="PFC电感">PFC电感</h3>
                             <p data-lang-en="Mainly used for residential & commercial air conditioners, inverter power supplies, industrial power, new energy storage." data-lang-cn="主要用于家用/商用空调、变频电源、工业电源、新能源储能。">主要用于家用/商用空调、变频电源、工业电源、新能源储能。</p>
-                            <p><strong data-lang-en="Features" data-lang-cn="产品特点">产品特点：</strong></p>
-                            <ul data-lang-en="Flat wire / Round wire optional; High efficiency; Low noise; Air conditioner special; High current" data-lang-cn="扁线/圆线可选；高效率；低噪音；空调专用；大电流">
-                                <li>扁线/圆线工艺可选</li>
-                                <li>空调专用、大功率适配</li>
-                                <li>高效率、低损耗、低噪音</li>
-                                <li>大电流规格齐全</li>
+                            <p><strong data-lang-en="Features">产品特点：</strong></p>
+                            <ul>
+                                <li data-lang-en="Flat wire / Round wire optional">扁线/圆线工艺可选</li>
+                                <li data-lang-en="Air conditioner special, high power compatible">空调专用、大功率适配</li>
+                                <li data-lang-en="High efficiency, low loss, low noise">高效率、低损耗、低噪音</li>
+                                <li data-lang-en="Complete high current specifications">大电流规格齐全</li>
                             </ul>
                             <table class="param-table">
                                 <tr>
-                                    <td data-lang-en="Rated Current" data-lang-cn="额定电流">额定电流</td>
+                                    <td data-lang-en="Rated Current">额定电流</td>
                                     <td>0 ~ 200A</td>
                                 </tr>
                                 <tr>
-                                    <td data-lang-en="Inductance Range" data-lang-cn="电感范围">电感范围</td>
+                                    <td data-lang-en="Inductance Range">电感范围</td>
                                     <td>0 ~ 1mH (Customizable)</td>
                                 </tr>
                                 <tr>
-                                    <td data-lang-en="Working Temp" data-lang-cn="工作温度">工作温度</td>
+                                    <td data-lang-en="Working Temp">工作温度</td>
                                     <td>-40℃ ~ +125℃</td>
                                 </tr>
                             </table>
@@ -202,7 +196,6 @@
                     </div>
                 </div>
 
-                <!-- 3. 功率电感 -->
                 <div id="power" class="tab-content">
                     <div class="product-detail">
                         <div class="product-slider">
@@ -211,24 +204,24 @@
                         <div class="product-info">
                             <h3 data-lang-en="Power Inductors" data-lang-cn="功率电感">功率电感</h3>
                             <p data-lang-en="Used in consumer electronics, adapters, LED drivers, control boards, small home appliances." data-lang-cn="应用于消费电子、适配器、LED驱动、控制板、小家电。">应用于消费电子、适配器、LED驱动、控制板、小家电。</p>
-                            <p><strong data-lang-en="Features" data-lang-cn="产品特点">产品特点：</strong></p>
-                            <ul data-lang-en="SMD / Through-hole optional; Small size; High saturation current; Low DCR; Stable performance" data-lang-cn="贴片/直插可选；体积小；高饱和电流；低直流电阻；性能稳定">
-                                <li>贴片/直插两种封装</li>
-                                <li>体积小巧、安装方便</li>
-                                <li>高饱和电流、低阻抗</li>
-                                <li>批量一致性好</li>
+                            <p><strong data-lang-en="Features">产品特点：</strong></p>
+                            <ul>
+                                <li data-lang-en="SMD / Through-hole optional">贴片/直插两种封装</li>
+                                <li data-lang-en="Small size, easy installation">体积小巧、安装方便</li>
+                                <li data-lang-en="High saturation current, low resistance">高饱和电流、低阻抗</li>
+                                <li data-lang-en="Good consistency in mass production">批量一致性好</li>
                             </ul>
                             <table class="param-table">
                                 <tr>
-                                    <td data-lang-en="Rated Current" data-lang-cn="额定电流">额定电流</td>
+                                    <td data-lang-en="Rated Current">额定电流</td>
                                     <td>0 ~ 30A</td>
                                 </tr>
                                 <tr>
-                                    <td data-lang-en="Inductance Range" data-lang-cn="电感范围">电感范围</td>
+                                    <td data-lang-en="Inductance Range">电感范围</td>
                                     <td>0.1μH ~ 1000μH</td>
                                 </tr>
                                 <tr>
-                                    <td data-lang-en="Working Temp" data-lang-cn="工作温度">工作温度</td>
+                                    <td data-lang-en="Working Temp">工作温度</td>
                                     <td>-40℃ ~ +125℃</td>
                                 </tr>
                             </table>
@@ -238,7 +231,7 @@
             </div>
         </section>
 
-        <!-- 🔥 已补全：公司简介+三大基地+认证+实验室（双语完整版） -->
+        <!-- 关于我们 -->
         <section id="about" class="section-about">
             <h2 class="section-title" data-lang-en="About Us" data-lang-cn="关于我们">关于我们</h2>
             <div class="about-container">
@@ -266,6 +259,7 @@
             </div>
         </section>
 
+        <!-- 联系我们 -->
         <section id="contact" class="section-contact">
             <div class="contact-container">
                 <div class="contact-info">
@@ -296,7 +290,6 @@
 
     <script src="tooplate-graphite-script.js"></script>
     <script>
-        // 双语切换
         let currentLang = 'en';
         const langBtn = document.getElementById('langBtn');
 
@@ -311,8 +304,7 @@
             currentLang = currentLang === 'en' ? 'cn' : 'en';
             initLang();
         });
-        
-        // 产品标签切换
+
         function openTab(evt, tabName) {
             let i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
